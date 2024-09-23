@@ -40,4 +40,6 @@ app.MapControllerRoute(
 
 app.MapRazorPages();
 
- app.Run();
+app.Run();
+
+public partial class Program { }

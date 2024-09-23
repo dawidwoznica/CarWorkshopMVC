@@ -34,7 +34,7 @@ public class HomeController : Controller
         {
             Title = "Hello World!",
             Description = "It's all about me!!",
-            Tags = new[] { "I", "Me", "So me!" }
+            Tags = ["I", "Me", "So me!"]
         };
 
         return View(model);

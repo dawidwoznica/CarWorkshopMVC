@@ -14,7 +14,7 @@ public class CreateCarWorkshopServiceCommandHandler(ICarWorkshopRepository carWo
     {
         var currentUser = userContext.GetCurrentUser();
         var carWorkshop = await carWorkshopRepository.GetByEncodedName(request.CarWorkshopEncodedName!);
-        var isEditable = carWorkshop.CreatedById == currentUser.Id || currentUser.IsInRole("Moderator");
+        var isEditable = currentUser != null && (carWorkshop.CreatedById == currentUser.Id || currentUser.IsInRole("Moderator"));
 
         if (!isEditable)
             return;
